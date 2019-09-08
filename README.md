@@ -7,8 +7,8 @@
 
 ### 目录：
 
-- [1. 安装ROS Melodic](./1. 安装ROS Melodic)
-- [2. 初识ROS与三只小海龟](./2. 初识ROS与三只小海龟)
+- [1. 安装ROS Melodic](1. 安装ROS Melodic/)
+- [2. 初识ROS与三只小海龟](2. 初识ROS与三只小海龟)
 - [3. ROS 通信](./3. ROS 通信)
 - [4. ROS常用组件工具](./4. ROS常用组件工具)
 - [5. URDF机器人建模](./5. URDF机器人建模)
@@ -20,4 +20,3 @@
 知乎上对应的专栏：
 
 [ROS学习笔记](https://zhuanlan.zhihu.com/c_1144679860579500032)
-
