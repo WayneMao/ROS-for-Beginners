@@ -1,0 +1,5 @@
+<launch>
+        <node pkg="turtlesim" type="turtlesim_node" name="sim"/>
+        <node pkg="learning_communication" type="32newturtles.py" name="sspawn"/>
+
+</launch>       

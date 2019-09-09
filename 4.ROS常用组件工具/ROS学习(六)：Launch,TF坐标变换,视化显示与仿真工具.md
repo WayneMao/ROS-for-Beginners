@@ -92,7 +92,9 @@ rosrun rviz rviz -d `rospack find turtle_tf` /rviz/turtle_rviz.rviz
 
 
 
+### 3. 实战演练
 
+- 完成[ROS通信 ](../3.ROS通信) **服务器客户端综合应用.md**中三道题目的启动和测试，将每道题中所使用的`rosrun`命令替换为一个`roslaunch`命令。
 
 
 
