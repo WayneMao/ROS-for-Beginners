@@ -147,6 +147,8 @@ if __name__ == '__main__':
 
 
 
+[32newturtles.py](learning_communication/scripts/32newturtles.py)
+
 先清理一下turtlesim_node背景上的轨迹,
 
 ```shell
@@ -257,13 +259,6 @@ if __name__ == "__main__":
 
 
 
-先启动小海龟：
-
-```shell
-roscore
-rosrun turtlesim turtlesim_node
-```
-
 综合以上两题：
 
 ```python
@@ -332,6 +327,29 @@ if __name__ == "__main__":
         newturtle_client()
         control_publisher()
 ```
+
+
+
+先启动小海龟仿真：[33.py](learning_communication/scripts/33.py)
+
+```shell
+roscore
+rosrun turtlesim turtlesim_node
+```
+
+接着：
+
+```shell
+rosrun learning_communication 33.py alpha # 最后一个参数是新产生海龟的名字
+> This turtle's name is alpha.
+> Please input turtle's name, linear_velocity and angular: alpha 2.0 3.0 # 指定对应名字海龟的速度，方向
+> linear velocity: 2.000000; angular: 3.000000
+
+```
+
+结果： 产生一只新的海龟，并指定某只海龟的速度、方向。
+
+
 
 目前存在一个问题：
 需要多线程解决控制多只乌龟
