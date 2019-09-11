@@ -1,3 +1,5 @@
+
+
 ## ROS学习(六)：Launch,TF坐标变换,视化显示与仿真工具
 
 ### 1. Launch 启动文件
@@ -42,17 +44,30 @@ Launch文件：通过XML文件实现多节点的的配置和启动(**自动启�
 
 
 
-**参数:**
+### 2. 参数
 
 \<param>、\<arg> 都为参数，但意义完全不同
 
+```python
+# 获取全局参数
+rospy.get_param('/global_param_name')
+
+# 获取目前命名空间的参数
+rospy.get_param('param_name')
+
+# 获取私有命名空间参数
+rospy.get_param('~private_param_name')
+# 获取参数，如果没，使用默认值
+rospy.get_param('foo', 'default_value')
+```
 
 
 
 
 
 
-### 2. TF坐标变换
+
+### 3. TF坐标变换
 
 参考：《机器人学导论》
 
@@ -92,9 +107,54 @@ rosrun rviz rviz -d `rospack find turtle_tf` /rviz/turtle_rviz.rviz
 
 
 
-### 3. 实战演练
+### 4. 实战演练
 
-- 完成[ROS通信 ](../3.ROS通信) **服务器客户端综合应用.md**中三道题目的启动和测试，将每道题中所使用的`rosrun`命令替换为一个`roslaunch`命令。
+(1) 完成[ROS通信 ](../3.ROS通信) **服务器客户端综合应用.md**中三道题目的启动和测试，将每道题中所使用的`rosrun`命令替换为一个`roslaunch`命令。
+
+a. 运行如下命令： 
+
+```shell
+  roslaunch learning_communication 31py.launch 
+```
+
+结果：将会出现一只做圆周运动的小海龟,并且在终端中输出打印海龟位置
+
+b. 运行如下命令：
+
+```shell
+roslaunch learning_communication 32py.launch
+```
+
+将会在产生一只新的海龟
+
+c. 
+
+修改了之前的 [33.py](learning_communication\scripts) 代码 , 并新建了 33py.launch 文件
+
+```python
+<launch>
+     <node pkg="turtlesim" type="turtlesim_node" name="sim" />
+     <node pkg="learning_communication" type="33.py" name="new" />
+        <param name='name' value='alpha' />
+</launch>
+
+```
+
+想要修改新产生turtle的名字就在 33py.launch 中修改 param 的value。
+
+运行如下命令：
+
+```shell
+roslaunch learning_communication 33py.launch
+> alpha 2.0 3.0  # 输入相应的海龟名字 及其 速度 方向
+```
+
+结果：随机位置产生一只名为“alpha” 的新海龟，
+
+输入 相应的海龟名字 及其 速度 方向后，这只海龟开始做圆周运动。
+
+
+
 
 
 
