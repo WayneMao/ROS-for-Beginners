@@ -3,7 +3,7 @@
 #include "ros/ros.h>
 #include "turtlesim/Spawn.h"
 
-int main(int argc,char ""argv){
+int main(int argc,char **argv){
 	// init node
 	ros::init(argc, argv, "client_generate_turtleWithParameter");
 	
@@ -29,7 +29,7 @@ int main(int argc,char ""argv){
 	
 	//   发布service请求，等待应答结果
 	if(spawnClient.call(srv)){
-		ROS_INIF("A new turtle named '%s' was spawned",srv.response.name.c_str());
+		ROS_INFO("A new turtle named '%s' was spawned",srv.response.name.c_str());
 	}
 	else
 	{
