@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="turtlesim" type="turtlesim_node" name="sim" />
+    <node pkg="learning_communication" type="33new.py" name="new" output = "screen" />
+</launch>    
